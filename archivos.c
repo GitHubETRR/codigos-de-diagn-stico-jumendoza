@@ -55,11 +55,6 @@ void cargarDesdeArchivo(Persona **lista, const char *nombreArchivo) {
     char linea[MAX_CHAR];
     while (fgets(linea, sizeof(linea), archivo)) {
         Persona *nueva = (Persona *)malloc(sizeof(Persona));
-        if (nueva == NULL) {
-            printf("\nError al asignar memoria.\n");
-            fclose(archivo);
-            return;
-        }
         sscanf(linea, "%[^;];%d", nueva->nombre, &nueva->edad);
         nueva->siguiente = *lista;
         *lista = nueva;
