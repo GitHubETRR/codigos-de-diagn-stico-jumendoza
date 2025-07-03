@@ -22,14 +22,14 @@ void agregarPersona(Persona **lista) {
     nueva->nombre[strcspn(nueva->nombre, "\n")] = '\0';
     printf("Ingrese edad: ");
     scanf("%d", &nueva->edad);
-    getchar(); // Limpiar buffer
+    getchar();
     nueva->siguiente = *lista;
     *lista = nueva;
 }
 
 void mostrarPersonas(Persona *lista) {
     if (lista == NULL) {
-        printf("\nLa lista está vacía.\n");
+        printf("La lista está vacía.\n");
         return;
     }
     Persona *actual = lista;
@@ -86,7 +86,7 @@ int main() {
         printf("1. Agregar persona\n");
         printf("2. Mostrar personas\n");
         printf("3. Guardar en archivo\n");
-        printf("4. Leer desde archivo\n");
+        printf("4. Cargar datos desde archivo\n");
         printf("5: Borrar lista actual\n");
         printf("6. Salir\n");
         printf("Seleccione una opcion: ");
