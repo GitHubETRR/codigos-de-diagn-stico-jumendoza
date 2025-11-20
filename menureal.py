@@ -24,15 +24,24 @@ def eliminar_personas():
     else:
         print("No se encontro a esa persona")
 
+def buscar_personas():
+    buscar = input("\nA quien desea buscar: ").lower()
+    if buscar in personas:
+        datos = personas[buscar]
+        print(". ", buscar.capitalize(), ",tiene", datos["edad"], "años y vive en la calle", datos["calle"].title())
+    else:
+        print("Persona no encontrada")
+
 def menu():
     opcion = ""
-    while opcion != "4":
+    while opcion != "5":
         print("\n--------MENU PRINCIPAL--------")
         print("¿Que quiere hacer? Seleccione un numero:")
         print("1. Agregar persona")
         print("2. Ver personas")
         print("3. Eliminar personas")
-        print("4. Salir")
+        print("4. Buscar personas")
+        print("5. Salir")
         opcion = input("Opcion:")
         if opcion == "1":
             agregar_persona()
@@ -41,6 +50,8 @@ def menu():
         elif opcion == "3":
             eliminar_personas()
         elif opcion == "4":
+            buscar_personas()
+        elif opcion == "5":
             print("Cerrando el sistema...")
         else:
             print("Opcion no valida, eliga otra")
