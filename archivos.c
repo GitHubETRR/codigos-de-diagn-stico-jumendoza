@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #define MAX_CHAR 100
-
+//hola
 typedef struct Persona {
     char nombre[MAX_CHAR];
     int edad;
